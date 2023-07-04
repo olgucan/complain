@@ -35,16 +35,22 @@ export default function RootLayout({
       ).json();
 
       // set state when the data received
-      setData(data);
+      setData(data.users);
     };
 
     dataFetch();
   }, []);
+  const adduser = (user) => {
+    setData([...data,user])
+  }
+  const edituser = (id,user) => {
+    setData(a=> a.map(k=>k.id==id ? {...k,...user} : {...k}))
+  }
   console.log(data)
   return (
     <html lang="en">
       <body className={inter.className}>
-      <ProductsContext.Provider value={{state:state,handleState,handlesetuser,user}}>
+      <ProductsContext.Provider value={{state:state,handleState,handlesetuser,user,data,adduser,edituser}}>
       {children}
   </ProductsContext.Provider>
         
