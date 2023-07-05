@@ -9,10 +9,10 @@ const Form = (props) => {
     const handlesubmit= () => {
         props.addUser({firstName:inputRefname.current.value,email:inputRefemail.current.value,
         domain:inputRefdomain.current.value,phone:inputRefphone.current.value,
-    university:inputRefuniversity.current.value,id:props.length+1})
+    university:inputRefuniversity.current.value,id:props.length+1,image:'/avatar.png'})
         props.setmountForm(false)
     }
-    console.log(props,'props')
+   // console.log(props,'props')
   return (
     <div className='flex border-2 border-yellow-950 flex-col gap-4 fixed top-[20%] left-1/2 translate-x-[-50%] px-4 py-8 w-1/3 bg-white'>
       <input ref={inputRefname} type="text" placeholder='first name' className='rounded-sm bg-white px-3 py-2 outline-none border-2 border-[#E5E5E5]' />

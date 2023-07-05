@@ -23,13 +23,13 @@ export const Rightmenu = ({user}) => {
    </div>
    <div className='w-full px-4 mt-8 flex flex-col gap-4 rightlinks'>
     <Link href={'/'} className={`flex rounded-md py-1  gap-2 items-center justify-center w-full  ${pathname == "/" ? "active" : ""}`}><Image alt='home' width={15} height={15} src={'/Home.svg'}></Image>Home </Link>
-    <Link href={'/course'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='course' width={15} height={15} src={'/Course.svg'}></Image>Course </Link>
+    <Link href={'/'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='course' width={15} height={15} src={'/Course.svg'}></Image>Course </Link>
     <Link href={'/students'} className={`flex rounded-md py-1  gap-2 items-center justify-center w-full ${pathname == "/students" ? "active" : ""}`}><Image alt='students' width={15} height={15} src={'/Students.svg'}></Image>Students </Link>
-    <Link href={'/payment'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='payments' width={15} height={15} src={'/Payment.svg'}></Image>Payment </Link>
-    <Link href={'/report'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='reports' width={15} height={15} src={'/Report.svg'}></Image>Report </Link>
-    <Link href={'/settings'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='reports' width={15} height={15} src={'/Setting.svg'}></Image>Settings </Link>
+    <Link href={'/'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='payments' width={15} height={15} src={'/Payment.svg'}></Image>Payment </Link>
+    <Link href={'/'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='reports' width={15} height={15} src={'/Report.svg'}></Image>Report </Link>
+    <Link href={'/'} className='flex rounded-md py-1  gap-2 items-center justify-center w-full '><Image alt='reports' width={15} height={15} src={'/Setting.svg'}></Image>Settings </Link>
    </div>
-   <Link href={'/logout'} className='mt-8 flex rounded-md py-1  gap-2 items-center justify-center w-full '>Logout <Image alt='reports' width={15} height={15} src={'/Setting.svg'}></Image> </Link>
+   <Link href={'/'} className='mt-8 flex rounded-md py-1  gap-2 items-center justify-center w-full '>Logout <Image alt='reports' width={15} height={15} src={'/Setting.svg'}></Image> </Link>
 
       </div>
   )

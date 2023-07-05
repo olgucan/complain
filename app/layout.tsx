@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import { useEffect, useState ,createContext} from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
-export const ProductsContext = createContext()
+export const ProductsContext = createContext(null)
 
 export const metadata = {
   title: 'Create Next App olgu',
@@ -24,7 +24,7 @@ export default function RootLayout({
   const handlesetuser = (a:string) => {
         setuser(a)
   }
-  const [data, setData] = useState();
+  const [data, setData] = useState<[]>();
   useEffect(() => {
     // fetch data
     const dataFetch = async () => {
@@ -40,17 +40,37 @@ export default function RootLayout({
 
     dataFetch();
   }, []);
-  const adduser = (user) => {
+  type user = {
+    firstName: string,
+    email:string,
+    university:string,
+    id:number,
+    domain:string,
+    phone:string,
+    image:string
+  }
+  const adduser = (user:user) => {
     setData([...data,user])
   }
   const edituser = (id,user) => {
     setData(a=> a.map(k=>k.id==id ? {...k,...user} : {...k}))
   }
-  console.log(data)
+  const removeuser =(id) => {
+        setData(a=>a.filter(k=>k.id !=id))
+  }
+  // const searchuser = (value) => {
+  //   setData(k=>k.filter(function(a,b){
+     
+  //     return a.firstName.toLowerCase().indexOf(value.toLowerCase()) !== -1 
+  //     || a.email.toLowerCase().indexOf(value.toLowerCase()) !== -1
+  //     || a.university.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+  //   }))
+  // }
+ // console.log(data)
   return (
     <html lang="en">
       <body className={inter.className}>
-      <ProductsContext.Provider value={{state:state,handleState,handlesetuser,user,data,adduser,edituser}}>
+      <ProductsContext.Provider value={{state:state,handleState,handlesetuser,user,data,adduser,edituser,removeuser}}>
       {children}
   </ProductsContext.Provider>
         
